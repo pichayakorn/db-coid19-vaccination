@@ -87,6 +87,12 @@ CREATE TABLE vaccination_record (
 **************************************************************** */
 -- PERSON
 -- EG: INSERT INTO person VALUES(10001,'Nattawat','Sakupiyanon','2001-02-28','085-1234-5678');
+INSERT INTO person VALUES (1100,'Javier'  ,'Moreno'      ,'1978-12-06','089-758-1948');
+INSERT INTO person VALUES (1101,'Kathy'   ,'Alexander'   ,'1984-09-04','087-597-1534');
+INSERT INTO person VALUES (1102,'Tiffany' ,'Elliott'     ,'1989-03-04','089-999-9999');
+INSERT INTO person VALUES (1103,'Cherry'  ,'Markham'     ,'1998-09-07','087-493-1937');
+INSERT INTO person VALUES (1104,'Norma'   ,'Connor'      ,'1999-04-09','087-493-1999');
+INSERT INTO person VALUES (1105,'Nattawat','Sakunpiyanon','2001-02-28','086-774-2615');
 
 -- LOCATION
 -- EG: INSERT INTO location VALUES(101,'Ministry of Public Health','11000');
