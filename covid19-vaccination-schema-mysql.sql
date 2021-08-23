@@ -17,69 +17,69 @@ CREATE DATABASE IF NOT EXISTS db12;
 USE db12;
 
 DROP TABLE IF EXISTS
-	person,
-	location,
-	vaccine,
-	vaccine_storage,
-	service_center,
-	vaccination_record;
+    person,
+    location,
+    vaccine,
+    vaccine_storage,
+    service_center,
+    vaccination_record;
 
 /* *************************************************************** 
 ***************************CREATING TABLES************************
 **************************************************************** */
 CREATE TABLE person (
-	personal_id     INTEGER         NOT NULL,
-	first_name      VARCHAR(14)     NOT NULL,
-	last_name       VARCHAR(16)     NOT NULL,
-	birth_date      DATE            NOT NULL,
-	phone_number    VARCHAR(15),
-	PRIMARY KEY (personal_id)
+    personal_id     INTEGER         NOT NULL,
+    first_name      VARCHAR(14)     NOT NULL,
+    last_name       VARCHAR(16)     NOT NULL,
+    birth_date      DATE            NOT NULL,
+    phone_number    VARCHAR(15),
+    PRIMARY KEY (personal_id)
 );
 
 CREATE TABLE location (
-	location_id     INTEGER         NOT NULL,
-	location_name   VARCHAR(50)     NOT NULL,
-	postal_code     VARCHAR(10)     NOT NULL,
-	PRIMARY KEY (location_id)
+    location_id     INTEGER         NOT NULL,
+    location_name   VARCHAR(50)     NOT NULL,
+    postal_code     VARCHAR(10)     NOT NULL,
+    PRIMARY KEY (location_id)
 );
 
 CREATE TABLE vaccine (
-	vaccine_code    CHAR(5)         NOT NULL,
-	vaccine_name    VARCHAR(20)     NOT NULL,
-	vaccine_type    VARCHAR(20)     NOT NULL,
-	PRIMARY KEY (vaccine_code)
+    vaccine_code    CHAR(5)         NOT NULL,
+    vaccine_name    VARCHAR(20)     NOT NULL,
+    vaccine_type    VARCHAR(20)     NOT NULL,
+    PRIMARY KEY (vaccine_code)
 );
 
 CREATE TABLE vaccine_storage (
-	lot_no          VARCHAR(10)     NOT NULL,
-	vaccine_code    CHAR(5)         NOT NULL,
-	receive_date    DATE            NOT NULL,
-	expire_date     DATE            NOT NULL,
-	quantity        INTEGER         NOT NULL,
-	FOREIGN KEY (vaccine_code) REFERENCES vaccine(vaccine_code),
-	PRIMARY KEY (lot_no)
+    lot_no          VARCHAR(10)     NOT NULL,
+    vaccine_code    CHAR(5)         NOT NULL,
+    receive_date    DATE            NOT NULL,
+    expire_date     DATE            NOT NULL,
+    quantity        INTEGER         NOT NULL,
+    FOREIGN KEY (vaccine_code) REFERENCES vaccine(vaccine_code),
+    PRIMARY KEY (lot_no)
 );
 
 CREATE TABLE service_center (
-	center_id       VARCHAR(10)     NOT NULL,
-	location_id     INTEGER         NOT NULL,
-	lot_no          VARCHAR(10)     NOT NULL,
-	receive_date    DATE            NOT NULL,
-	quantity        INTEGER         NOT NULL,
-	FOREIGN KEY (location_id) REFERENCES location(location_id),
-	FOREIGN KEY (lot_no) REFERENCES vaccine_storage(lot_no),
-	PRIMARY KEY (center_id)
+    center_id       VARCHAR(10)     NOT NULL,
+    location_id     INTEGER         NOT NULL,
+    lot_no          VARCHAR(10)     NOT NULL,
+    receive_date    DATE            NOT NULL,
+    quantity        INTEGER         NOT NULL,
+    FOREIGN KEY (location_id) REFERENCES location(location_id),
+    FOREIGN KEY (lot_no) REFERENCES vaccine_storage(lot_no),
+    PRIMARY KEY (center_id)
 );
 
 CREATE TABLE vaccination_record (
-	record_no       INTEGER         NOT NULL,
-	personal_id     INTEGER         NOT NULL,
-	vaccinate_date  DATE            NOT NULL,
-	serial_no       INTEGER         NOT NULL,
-	center_id       VARCHAR(10)     NOT NULL,
-	FOREIGN KEY (personal_id) REFERENCES person(personal_id),
-	FOREIGN KEY (center_id) REFERENCES service_center(center_id),
-	PRIMARY KEY (record_no)
+    record_no       INTEGER         NOT NULL,
+    personal_id     INTEGER         NOT NULL,
+    vaccinate_date  DATE            NOT NULL,
+    serial_no       INTEGER         NOT NULL,
+    center_id       VARCHAR(10)     NOT NULL,
+    FOREIGN KEY (personal_id) REFERENCES person(personal_id),
+    FOREIGN KEY (center_id) REFERENCES service_center(center_id),
+    PRIMARY KEY (record_no)
 );
 
 /* ***************************************************************
