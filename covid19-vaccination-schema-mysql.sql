@@ -96,6 +96,11 @@ INSERT INTO person VALUES (1105,'Nattawat','Sakunpiyanon','2001-02-28','086-774-
 
 -- LOCATION
 -- EG: INSERT INTO location VALUES(101,'Ministry of Public Health','11000');
+INSERT INTO location VALUES(301,'Ministry of Public Health'                      ,'11000');
+INSERT INTO location VALUES(302,'Thai-Nichi Institute of Technology'             ,'10250');
+INSERT INTO location VALUES(303,'Siam Paragon'                                   ,'10330');
+INSERT INTO location VALUES(304,'Bang Sue Grand Station'                         ,'10900');
+INSERT INTO location VALUES(305,'The University of the Thai Chamber of Commerce' ,'10400');
 
 -- VACCINE
 -- EG: INSERT INTO vaccine VALUES('MD','Moderna','RNA');
