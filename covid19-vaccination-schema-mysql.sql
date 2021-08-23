@@ -104,11 +104,12 @@ INSERT INTO location VALUES(305,'The University of the Thai Chamber of Commerce'
 
 -- VACCINE
 -- EG: INSERT INTO vaccine VALUES('MD','Moderna','RNA');
-INSERT INTO vaccine VALUES('AZ','AstraZeneca' ,'Adenovirus vector');
-INSERT INTO vaccine VALUES('PZ','Pfizer'      ,'RNA');
-INSERT INTO vaccine VALUES('MD','Moderna'     ,'RNA');
-INSERT INTO vaccine VALUES('SP','Sinopharm'   ,'Inactivated');
-INSERT INTO vaccine VALUES('CV','CoronaVac'   ,'Inactivated');
+INSERT INTO vaccine VALUES('AZ','AstraZeneca'      ,'Adenovirus vector');
+INSERT INTO vaccine VALUES('PZ','Pfizer'           ,'RNA');
+INSERT INTO vaccine VALUES('MD','Moderna'          ,'RNA');
+INSERT INTO vaccine VALUES('SP','Sinopharm'        ,'Inactivated');
+INSERT INTO vaccine VALUES('CV','CoronaVac'        ,'Inactivated');
+INSERT INTO vaccine VALUES('JJ','Johnson & Johnson','Adenovirus vector');
 
 -- VACCINE STORAGE
 -- EG: INSERT INTO vaccine_storage VALUES('MD-001','MD','2021-05-01','2021-12-01',10000);
