@@ -111,7 +111,13 @@ INSERT INTO vaccine VALUES('SP','Sinopharm'   ,'Inactivated');
 INSERT INTO vaccine VALUES('CV','CoronaVac'   ,'Inactivated');
 
 -- VACCINE STORAGE
--- EG: INSERT INTO vaccine_storage VALUES('MD-001','MD','2021-05-01','2021-12-1',10000);
+-- EG: INSERT INTO vaccine_storage VALUES('MD-001','MD','2021-05-01','2021-12-01',10000);
+INSERT INTO vaccine_storage VALUES('AZ-001','AZ','2021-03-01','2021-09-01',200000);
+INSERT INTO vaccine_storage VALUES('CV-001','CV','2021-03-12','2021-09-12',200000);
+INSERT INTO vaccine_storage VALUES('CV-002','CV','2021-05-01','2021-11-01',300000);
+INSERT INTO vaccine_storage VALUES('MD-001','MD','2021-06-23','2021-12-23',100000);
+INSERT INTO vaccine_storage VALUES('PZ-001','PZ','2021-07-14','2022-01-14', 50000);
+INSERT INTO vaccine_storage VALUES('SP-001','SP','2021-05-09','2021-11-09',200000);
 
 -- SERVICE CENTER
 -- EG: INSERT INTO service_center VALUES('101-B',101,'MD-001','2021-06-14',5000);
