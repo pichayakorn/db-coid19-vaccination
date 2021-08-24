@@ -165,4 +165,4 @@ INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) 
 INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1102,'2021-08-01',829359400392844,'305-A');
 INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1102,'2021-08-22',857591375669083,'305-A');
 
-commit;
+COMMIT;
