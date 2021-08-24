@@ -72,7 +72,7 @@ CREATE TABLE service_center (
 );
 
 CREATE TABLE vaccination_record (
-    record_no       INTEGER         NOT NULL,
+    record_no       INTEGER         NOT NULL    AUTO_INCREMENT,
     personal_id     INTEGER         NOT NULL,
     vaccinate_date  DATE            NOT NULL,
     serial_no       BIGINT          NOT NULL,
@@ -81,6 +81,9 @@ CREATE TABLE vaccination_record (
     FOREIGN KEY (center_id) REFERENCES service_center(center_id),
     PRIMARY KEY (record_no)
 );
+
+-- Start vaccine record number from 20001
+ALTER TABLE vaccination_record AUTO_INCREMENT = 20001;
 
 /* ***************************************************************
 ***************************INSERTING DATA*************************
@@ -132,12 +135,14 @@ INSERT INTO service_center VALUES('305-A',305,'SP-001','2021-05-28', 7000);
 
 -- VACCINATION RECORD
 -- EG: INSERT INTO vaccination_record VALUES(20001,10001,'2021-06-30',123456789,'101-B');
-INSERT INTO vaccination_record VALUES(20001,1105,'2021-04-11',228560673472062,'304-B');
-INSERT INTO vaccination_record VALUES(20002,1105,'2021-05-01',294748401543822,'304-B');
-INSERT INTO vaccination_record VALUES(20003,1101,'2021-05-17',388060018036570,'302-A');
-INSERT INTO vaccination_record VALUES(20004,1103,'2021-05-26',460549216285029,'302-A');
-INSERT INTO vaccination_record VALUES(20005,1100,'2021-05-28',516094558049081,'301-B');
-INSERT INTO vaccination_record VALUES(20006,1100,'2021-06-14',612308072123963,'301-A');
-INSERT INTO vaccination_record VALUES(20007,1105,'2021-07-13',713256717206218,'303-A');
-INSERT INTO vaccination_record VALUES(20008,1102,'2021-08-01',829359400392844,'305-A');
-INSERT INTO vaccination_record VALUES(20009,1102,'2021-08-22',857591375669083,'305-A');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1105,'2021-04-11',228560673472062,'304-B');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1105,'2021-05-01',294748401543822,'304-B');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1101,'2021-05-17',388060018036570,'302-A');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1103,'2021-05-26',460549216285029,'302-A');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1100,'2021-05-28',516094558049081,'301-B');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1100,'2021-06-14',612308072123963,'301-A');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1105,'2021-07-13',713256717206218,'303-A');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1102,'2021-08-01',829359400392844,'305-A');
+INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1102,'2021-08-22',857591375669083,'305-A');
+
+commit;
