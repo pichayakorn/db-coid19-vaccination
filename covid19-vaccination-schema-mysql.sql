@@ -85,6 +85,26 @@ CREATE TABLE vaccination_record (
 -- Start vaccine record number from 20001
 ALTER TABLE vaccination_record AUTO_INCREMENT = 20001;
 
+-- vaccine record detail view
+CREATE OR REPLACE VIEW vaccine_record_detail_view AS
+SELECT
+	personal_id,
+	first_name,
+	last_name,
+	vaccine_name,
+	ROW_NUMBER() OVER (PARTITION BY personal_id ORDER BY vaccinate_date) AS 'dose_no',
+	vaccinate_date,
+	lot_no,
+	serial_no,
+	location_name
+FROM
+	person
+	JOIN vaccination_record USING(personal_id)
+	JOIN service_center USING(center_id) 
+	JOIN location USING(location_id)
+	JOIN vaccine_storage USING(lot_no)
+	JOIN vaccine USING(vaccine_code);
+
 /* ***************************************************************
 ***************************INSERTING DATA*************************
 **************************************************************** */
