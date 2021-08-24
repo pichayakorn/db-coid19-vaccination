@@ -75,7 +75,7 @@ CREATE TABLE vaccination_record (
     record_no       INTEGER         NOT NULL,
     personal_id     INTEGER         NOT NULL,
     vaccinate_date  DATE            NOT NULL,
-    serial_no       INTEGER         NOT NULL,
+    serial_no       BIGINT          NOT NULL,
     center_id       VARCHAR(10)     NOT NULL,
     FOREIGN KEY (personal_id) REFERENCES person(personal_id),
     FOREIGN KEY (center_id) REFERENCES service_center(center_id),
