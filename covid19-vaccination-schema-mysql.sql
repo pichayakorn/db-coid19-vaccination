@@ -3,9 +3,9 @@
 -- INT-301 Database System: Semester 1/2021
 -- DB12 group project
 -- @Author:
---          1911310124 Kornkanok Samrit
---          1911310363 Nattawat Sakupiyanon
---          1911310710 Pratch Suntichaikul
+--      1911310124 Kornkanok Samrit
+--      1911310363 Nattawat Sakupiyanon
+--      1911310710 Pratch Suntichaikul
 
 -- Script file for MySQL DBMS
 -- This script file creates the following tables:
