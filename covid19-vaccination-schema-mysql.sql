@@ -110,7 +110,7 @@ FROM
 **************************************************************** */
 BEGIN;
 -- PERSON
--- EG: INSERT INTO person VALUES(10001,'Nattawat','Sakupiyanon','2001-02-28','085-1234-5678');
+-- Attributes: (PK)personal_id, first_name, last_name, birth_date, phone_num
 INSERT INTO person VALUES (1100,'Javier'  ,'Moreno'      ,'1978-12-06','089-758-1948');
 INSERT INTO person VALUES (1101,'Kathy'   ,'Alexander'   ,'1984-09-04','087-597-1534');
 INSERT INTO person VALUES (1102,'Tiffany' ,'Elliott'     ,'1989-03-04','089-999-9999');
@@ -119,7 +119,7 @@ INSERT INTO person VALUES (1104,'Norma'   ,'Connor'      ,'1999-04-09','087-493-
 INSERT INTO person VALUES (1105,'Nattawat','Sakunpiyanon','2001-02-28','086-774-2615');
 
 -- LOCATION
--- EG: INSERT INTO location VALUES(101,'Ministry of Public Health','11000');
+-- Attributes: (PK)location_id, location_name, postal_code
 INSERT INTO location VALUES(301,'Ministry of Public Health'                      ,'11000');
 INSERT INTO location VALUES(302,'Thai-Nichi Institute of Technology'             ,'10250');
 INSERT INTO location VALUES(303,'Siam Paragon'                                   ,'10330');
@@ -127,7 +127,7 @@ INSERT INTO location VALUES(304,'Bang Sue Grand Station'                        
 INSERT INTO location VALUES(305,'The University of the Thai Chamber of Commerce' ,'10400');
 
 -- VACCINE
--- EG: INSERT INTO vaccine VALUES('MD','Moderna','RNA');
+-- Attributes: (PK)vaccine_code, vaccine_name, vaccine_type
 INSERT INTO vaccine VALUES('AZ','AstraZeneca'      ,'Adenovirus vector');
 INSERT INTO vaccine VALUES('PZ','Pfizer'           ,'RNA');
 INSERT INTO vaccine VALUES('MD','Moderna'          ,'RNA');
@@ -136,7 +136,7 @@ INSERT INTO vaccine VALUES('CV','CoronaVac'        ,'Inactivated');
 INSERT INTO vaccine VALUES('JJ','Johnson & Johnson','Adenovirus vector');
 
 -- VACCINE STORAGE
--- EG: INSERT INTO vaccine_storage VALUES('MD-001','MD','2021-05-01','2021-12-01',10000);
+-- Attributes: (PK)lot_no, (FK1)vaccine_code, receive_code, expire_date, quantity
 INSERT INTO vaccine_storage VALUES('AZ-001','AZ','2021-03-01','2021-09-01',200000);
 INSERT INTO vaccine_storage VALUES('CV-001','CV','2021-03-12','2021-09-12',200000);
 INSERT INTO vaccine_storage VALUES('CV-002','CV','2021-05-01','2021-11-01',300000);
@@ -145,7 +145,7 @@ INSERT INTO vaccine_storage VALUES('PZ-001','PZ','2021-07-14','2022-01-14', 5000
 INSERT INTO vaccine_storage VALUES('SP-001','SP','2021-05-09','2021-11-09',200000);
 
 -- SERVICE CENTER
--- EG: INSERT INTO service_center VALUES('101-B',101,'MD-001','2021-06-14',5000);
+-- Attributes: (PK)center_id, (FK1)location_od, (FK2)lot_no, receive_date, quantity
 INSERT INTO service_center VALUES('301-A',301,'AZ-001','2021-03-14',30000);
 INSERT INTO service_center VALUES('301-B',301,'CV-002','2021-05-05',30000);
 INSERT INTO service_center VALUES('302-A',302,'AZ-001','2021-04-01', 8000);
@@ -155,7 +155,7 @@ INSERT INTO service_center VALUES('304-B',304,'CV-001','2021-03-17',40000);
 INSERT INTO service_center VALUES('305-A',305,'SP-001','2021-05-28', 7000);
 
 -- VACCINATION RECORD
--- EG: INSERT INTO vaccination_record VALUES(20001,10001,'2021-06-30',123456789,'101-B');
+-- Attributee: (PK)record_no, (FK1)personal_id, vaccinate_date, serial_no, (FK2)center_id
 INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1105,'2021-04-11',228560673472062,'304-B');
 INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1105,'2021-05-01',294748401543822,'304-B');
 INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1101,'2021-05-17',388060018036570,'302-A');
