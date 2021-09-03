@@ -31,7 +31,7 @@ CREATE TABLE person (
     personal_id     INTEGER         NOT NULL,
     first_name      VARCHAR(14)     NOT NULL,
     last_name       VARCHAR(16)     NOT NULL,
-    birth_date      DATE            NOT NULL,
+    birth_date      DATE,
     phone_number    VARCHAR(15),
     PRIMARY KEY (personal_id)
 );
