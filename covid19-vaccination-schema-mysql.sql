@@ -155,7 +155,7 @@ INSERT INTO service_center VALUES('304-B',304,'CV-001','2021-03-17',40000);
 INSERT INTO service_center VALUES('305-A',305,'SP-001','2021-05-28', 7000);
 
 -- VACCINATION RECORD
--- Attributee: (PK)record_no, (FK1)personal_id, vaccinate_date, serial_no, (FK2)center_id
+-- Attributee: (PK)record_no (auto increment), (FK1)personal_id, vaccinate_date, serial_no, (FK2)center_id
 INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1105,'2021-04-11',228560673472062,'304-B');
 INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1105,'2021-05-01',294748401543822,'304-B');
 INSERT INTO vaccination_record (personal_id,vaccinate_date,serial_no,center_id) VALUES(1101,'2021-05-17',388060018036570,'302-A');
